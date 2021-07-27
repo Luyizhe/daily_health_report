@@ -27,5 +27,6 @@ jobs:
       env:
         ID: ${{secrets.id}}
         PWS: ${{secrets.passwd}}
+        MAIL: ${{secrets.EMAIL}}
       run: |
-        python ./main.py --username ID --password PWS --mail_user 13934248376 --mail_pass <mail_pass> --location 中国江苏省南京市栖霞区仙林大道 --mail_notify
+        python ./main.py --username ID --password PWS --mail_user MAIL --mail_pass PWS --location 中国江苏省南京市栖霞区仙林大道 --mail_notify
