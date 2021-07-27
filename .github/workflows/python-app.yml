@@ -28,6 +28,7 @@ jobs:
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
         
     - name: run
+      shell: bash
       env:
         ID: ${{secrets.ID}}
         PWS: ${{secrets.PASSWD}}
