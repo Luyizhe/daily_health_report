@@ -5,7 +5,7 @@ name: Python application
 
 on:
   schedule:
-    - cron: '5 13 * * *'
+    - cron: '5 13,14 * * *'
 
 jobs:
   build:
@@ -14,13 +14,19 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: Set up Python 3.9
+    - name: Set up Python 3.8
       uses: actions/setup-python@v2
       with:
-        python-version: 3.9
+        python-version: 3.8
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+        
+    - name: get id/pwd
+      env:
+        ID: ${{secrets.id}}
+        PWS: ${{secrets.passwd}}
     - name: run
-      run: bash ./report.sh
+      run: |
+        python /path/to/your/main.py --username ID --password PWS --mail_user 13934248376 --mail_pass <mail_pass> --location 中国江苏省南京市栖霞区仙林大道 --mail_notify
