@@ -11,7 +11,6 @@ from log import log
 class AutoReport:
 	def __init__(self, username, raw_password, force=False, location='中国江苏省南京市栖霞区仙林大道'):
 		self.username = username
-		print(username)
 		self.raw_password = raw_password
 		self.force = force
 		self.location = location
