@@ -5,6 +5,7 @@ from fire import Fire
 from mail import send
 from time import sleep
 from log import log
+from random import randint
 
 def main(username='', password='', file='', b64=False, mail_notify=False, mail_user='', mail_pass='', mail_host='smtp.exmail.qq.com', force=False, location='中国江苏省南京市栖霞区仙林大道'):
 	#load username and password
@@ -35,4 +36,5 @@ def main(username='', password='', file='', b64=False, mail_notify=False, mail_u
 		log(msg, status)
 
 if __name__ == '__main__':
+	sleep(randint(600000))
 	Fire(main)
