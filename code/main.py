@@ -36,5 +36,5 @@ def main(username='', password='', file='', b64=False, mail_notify=False, mail_u
 		log(msg, status)
 
 if __name__ == '__main__':
-	sleep(randint(1, 600000))
+	sleep(randint(1, 600))
 	Fire(main)
